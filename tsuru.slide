@@ -1,0 +1,181 @@
+Tsuru
+PaaS
+15:00 20 Apr 2017
+
+Arthur Rodrigues
+Estag, Globo.com
+arthur.silva@corp.globo.com
+http://arxdsilva.github.io
+@arxdsilva
+
+
+* Cloud Computing
+    Utilização compartilhada: processamento, memória e armazenamento
+.image images/cloud.svg 550 550
+
+
+* Cloud Computing
+    Vantagens
+- Mais barato;
+- Acesso remoto;
+- Terceirização de serviços não primários ao desenvolvimento (gerenciamento de Data Center, escala de plataformas - Bancos, routers);
+- Integração e agilidade em análise de dados.
+
+    Desvantagens/Receios
+- Segurança;
+- Sem conexão, sem acesso; x.x
+
+* Cloud Computing
+    NSA 2013 - Edward Snowden
+.image images/NSA.jpg
+
+
+* Cloud Computing
+    Pioneiros
+.image images/db.svg _ 160
+.caption Dropbox
+.image images/od.png _ 160
+.image images/cos.jpg _ 160
+
+
+* PaaS, SaaS, IaaS
+.image images/cloud.svg 350 350
+Oferece infraestrutura, manutenção, comunicação e ferramentas necessárias para o funcionamento da aplicacao
+
+
+* Escalabilidade
+.image images/pong.jpg _ 720
+.caption Usuário vs Aplicação
+
+
+* Tsuru
+    Objetivos
+- boas práticas (cultura) - 12factor.net
+- separação de papéis (dev/op)
+- simplicidade (nome/plataforma/tamanho)
+- escalabilidade
+- multi plataforma
+- open source
+- sem vendor lock-in
+
+* Tsuru: Quem usa?
+- Jusbrasil
+- Globo.com
+- Hotel Urbano
+- QDQ Media
+- Magazine Luiza
+- Rivendel
+- Nuveo
+- eduK
+- filmow
+
+
+* Tsuru: Arquitetura
+    RESTful API server
+- Responsavel pelo fluxo de trabalho e ciclo de vida da aplicacao
+    Database
+- MongoDB
+    Queue/Cache
+- Redis
+    Gerenciador de (repositorios Git/usuarios/acesso SSH)
+- Gandalf
+    Armazenamento de imangens Docker
+- (Distribution)Registry
+    Router: planB, rpaas && plugavel
+
+
+* Tsuru: Arquitetura
+.image images/architecture.png
+
+
+* Tsuru: Plataformas
+- Go
+- Java
+- NodeJS
+- php
+- python2
+- python3
+- Ruby
+- Static
+
+
+* Tsuru: Servicos
+- Todos os recursos e ferramentas externos a aplicação.
+- RPaaS, MySQL, Redis, MongoDB, métricas, monitoração, scale, storage, etc
+- Third Party
+
+
+* Hands on: setup
+#tsuru app-list
+.link https://vagrantup.com/downloads.html
+.link https://github.com/tsuru/tsuru-client/releases Cliente
+.code code/client
+.link http://github.com/tsuru/tsuru-bootstrap
+.link virtualbox.org
+.code code/target
+.link https://github.com/ArxdSilva/app
+
+Instalando plataformas
+.code code/plataformas
+
+
+* Hands on: criando seu app
+.code code/appcreate
+Nosso app:
+.code app/index.html
+
+
+* Hands on: Deploy
+- Client
+- Git
+- Drag and Drop
+
+
+* Hands on: Deploy Client
+.code code/deploy
+
+
+* Hands on: Deploy Drag'n Drop
+.link tsuru-dashboard.192.168.50.4.nip.io Dashboard
+
+
+* Hands on: Deploy Git
+.code code/gitdeploy
+
+
+* Hands on: Gerencimento
+- usuarios/times
+
+
+* Hands on: Gerenciando app
+    tsuru app-create/remove
+    tsuru app-start/restart/stop/
+    tsuru app-info
+    tsuru env-set/get/unset (servicos)
+    tsuru app-deploy-list
+    tsuru app-deploy-rollback
+    (1.3) tsuru app-deploy-rollback-update
+    tsuru app-deploy-list
+    tsuru unit-add/remove
+    tsuru certificate-list/set/unset (certificados TLS)
+
+* Exercicio 1
+# - *Criar* novo usuario 'user@example.com'/'12345'
+- *Criar* app 'new'
+- fazer *deploy* por 'app-deploy'
+- fazer *deploy* por git
+- fazer *deploy* por drag'n drop (opcional)
+- *Parar* a app
+- abrir endereco da app
+- fazer *rollback* para a versao v1
+- *Adicionar* *units* na app
+- *Reiniciar* a app
+- *Remover* *units* da app
+- *Deletar* a app
+
+
+* Extra
+    .tsuruignore (1.3)
+
+* Tsuru, resumo
+.image images/resumo.png

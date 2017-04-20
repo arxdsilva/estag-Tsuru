@@ -1,0 +1,4 @@
+brew tap tsuru/homebrew-tsuru
+brew install tsuru
+brew update
+brew upgrade tsuru

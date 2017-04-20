@@ -1,0 +1,6 @@
+tsuru app-create <appname> <platform> [--plan/-p plan_name] [--router/-r router_name]
+[--team/-t (team owner)] [--pool/-o pool_name] [--description/-d description]
+[--router-opts key=value]...
+
+tsuru app-create pro static
+tsuru app-list

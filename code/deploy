@@ -1,0 +1,4 @@
+tsuru app-deploy [-a/--app <appname>] [-i/--image <image_url>]
+<file-or-dir-1> [file-or-dir-2] ... [file-or-dir-n]
+
+tsuru app-deploy -a pro .
